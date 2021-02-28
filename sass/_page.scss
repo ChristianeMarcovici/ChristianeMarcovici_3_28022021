@@ -1,0 +1,111 @@
+body {
+  @include font-text;
+  margin: 0;
+}
+h1 {
+  @include font-logo;
+  height: 65px ;
+  @include cont-center ;
+  margin: 0px;
+}
+.accueil {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+  background-color: $color-bg;
+  height: 350px;
+}
+.localisation {
+  width: 100%;
+  height: 50px;
+  @include cont-center ; 
+ background-color: $color-bg;
+ box-shadow: 3px 3px 15px silver inset;
+ margin-top: 0px;
+
+} 
+.localisation button,
+.localisation input {
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+ @include font-text ;
+}
+h2 {
+  width: 70%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0px 0px 0px;
+  padding: 0px;
+
+}
+.accueil p {
+  width: 90% ;
+  @include cont-center;
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 40px;
+}
+.explore {
+  width:60%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 2px 4px 8px silver;
+}
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  width: 90%;
+}
+h3 {
+  width: 90%;
+  font-size: 1.4em;
+}
+.fonctionnement ol {
+  counter-reset: etape;
+  margin: 0px;
+  padding: 0px;
+}
+.fonctionnement li {
+  list-style-type: none;
+  counter-increment: etape;
+  margin: 0px 10px 50px 10px;
+  padding-right: 10px;
+  width: 93%;
+  height: 70px;
+  box-shadow: 1px 1px 5px silver;
+  border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+font-size: 1.2em;
+}
+.fonctionnement li:before {
+ content: counter(etape);
+ background: $color-primary;
+padding: 5px 10px 5px 10px ;
+margin-left: -10px;
+ border-radius: 15px;
+ margin-right: 0px;
+ color: white;
+ 
+}
+.fonctionnement i{ 
+  margin: 0px 20px 0px 20px;
+  font-size: 1.2em;
+  color: silver;
+}
+.fonctionnement i:hover {
+  color: $color-primary;
+}
+.fonctionnement li:hover {
+  background-color: $color-primary;
+}
