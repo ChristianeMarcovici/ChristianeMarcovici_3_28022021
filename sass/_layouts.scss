@@ -1,0 +1,125 @@
+.menu_header {
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  & i {
+    font-size: 1.8em;
+    margin-right: 50px;
+  }
+}
+
+.img-menu1 {
+  @include img-menu;
+  background-image: url(../images/la_palette_du_gout.jpg);
+  margin-bottom: 0px;
+}
+.menu {
+  background-color: #e0e3e3;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__conteneur {
+    width: 90%;
+    padding: 0px;
+    margin: 0px auto 0px auto;
+  }
+}
+.menu-titre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  & h2 {
+    @include font-logo;
+    font-size: 1.5em;
+    margin: 0px;
+  }
+}
+.menu-titre i {
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+.menu h3 {
+  @include font-text-thin;
+  font-size: 1.4em;
+}
+.cont-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 280px;
+  height: 70px;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  position: relative;
+
+  & h4 {
+    @include font-text margin: 0px;
+    padding: 0px;
+    margin-left: 20px;
+  }
+}
+.cont-menu p {
+  font-size: 0.8em;
+  margin: 0px;
+  margin-left: 20px;
+}
+.cont-menu__text {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: 90%;
+  height: 20px;
+  &--detail {
+    overflow: hidden;
+    z-index: 1;
+  }
+}
+.prix {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-right: 20px;
+  z-index: 1;
+}
+
+.btn-cmd {
+  width: 50%;
+  height: 50px;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  text-transform: none;
+  background: linear-gradient($color-primary, $color-secondary);
+}
+.btn-check {
+  display: flex;
+  width: 60px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: $color-tertiary;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  right: 0px;
+  opacity: 0;
+}
+.btn-check:active {
+  opacity: 100%;
+  cursor: pointer;
+}

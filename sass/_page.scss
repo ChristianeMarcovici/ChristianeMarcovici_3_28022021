@@ -1,55 +1,55 @@
 body {
-  @include font-text;
+  @include font-text ;
   margin: 0;
 }
 h1 {
   @include font-logo;
-  height: 65px ;
-  @include cont-center ;
+  height: 65px;
+  @include cont-center;
   margin: 0px;
 }
 .accueil {
- display: flex;
- flex-direction: column;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: $color-bg;
   height: 350px;
 }
 .localisation {
   width: 100%;
   height: 50px;
-  @include cont-center ; 
- background-color: $color-bg;
- box-shadow: 3px 3px 15px silver inset;
- margin-top: 0px;
-
-} 
+  @include cont-center;
+  background-color: $color-bg;
+  box-shadow: 3px 3px 15px silver inset;
+  margin-top: 0px;
+}
 .localisation button,
 .localisation input {
   border: none;
   background-color: transparent;
   font-size: 1em;
   font-weight: bold;
- @include font-text ;
+  @include font-text;
 }
 h2 {
   width: 70%;
-  font-size: 1.5em;
-  font-weight: bold;
+  @include font-text-black ;
+  font-size: 1.4em;
   text-align: center;
   margin: 40px 0px 0px 0px;
   padding: 0px;
-
 }
 .accueil p {
-  width: 90% ;
+  width: 90%;
+  @include font-text-thin;
   @include cont-center;
   text-align: center;
   font-size: 1em;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 .explore {
-  width:60%;
+  width: 60%;
   height: 50px;
   border-radius: 25px;
   border: none;
@@ -83,22 +83,24 @@ h3 {
   height: 70px;
   box-shadow: 1px 1px 5px silver;
   border-radius: 20px;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .fonctionnement li:before {
- content: counter(etape);
- background: $color-primary;
-padding: 5px 10px 5px 10px ;
-margin-left: -10px;
- border-radius: 15px;
- margin-right: 0px;
- color: white;
- 
+  content: counter(etape);
+  @include cont-center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: $color-primary;
+  margin-left: -10px;
+  margin-right: 0px;
+  color: white;
 }
-.fonctionnement i{ 
+.fonctionnement i {
   margin: 0px 20px 0px 20px;
   font-size: 1.2em;
   color: silver;
@@ -107,5 +109,106 @@ margin-left: -10px;
   color: $color-primary;
 }
 .fonctionnement li:hover {
-  background-color: $color-primary;
+  background-color: $color-primary-light;
+}
+h4 {
+  margin: 0px;
+}
+.restaurants {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  & p {
+  @include font-text-thin;
+  margin: 0px;
+  }
+}
+.conteneur {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px silver;
+  contain: content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+.conteneur__text {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 0px 20px;
+  &--titre {
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+  }
+}
+.conteneur i {
+  margin-right: 20px;
+  font-size: 2em;
+  color: $color-primary;
+}
+.conteneur__img {
+  width: 100%;
+  height: 175px;
+  
+  &--new {
+    width: 70px;
+    height: 30px;
+    background-color: $color-tertiary;
+    font-size: 0.8em;
+    @include cont-center;
+    border-radius: 4px;
+    color: $color-tertiary-dark;
+    font-weight: bold;
+    position: absolute;
+    top:20px;
+    right: 20px;
+ 
+  }
+}
+.conteneur__img img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0px;
+  position: absolute;
+}
+footer {
+  height: 160px;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  & ul {
+    list-style-type: none;
+    font-size: 0.8em;
+    margin-top: 40px;
+    padding-top: 20px;
+    margin-left: 0px;
+    color: white;
+    & li {
+      margin-bottom: 5px;
+      & i {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+.footer_logo {
+  @include font-logo;
+  font-size: 1.1em;
+  color: white;
+  margin-bottom: 20px;
+}
+.contact a {
+  text-decoration: none;
+  color: white;
+}
+.contact a:hover {
+  text-decoration: none;
+  color: #9356dc;
 }
