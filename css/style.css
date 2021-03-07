@@ -394,8 +394,8 @@ footer ul li i {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../images/la_palette_du_gout.jpg);
   margin-bottom: 0px;
+  background-image: url(../images/la_palette_du_gout.jpg);
 }
 
 .menu {
@@ -496,19 +496,21 @@ footer ul li i {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 90%;
-  height: 20px;
+  position: relative;
 }
 
 .cont-menu__text--detail {
   overflow: hidden;
-  z-index: 1;
 }
 
 .prix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.9em;
   font-weight: bold;
   margin-right: 20px;
-  z-index: 1;
+  position: relative;
 }
 
 .btn-cmd {
@@ -549,7 +551,41 @@ footer ul li i {
 }
 
 .btn-check:active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20px;
   opacity: 100%;
   cursor: pointer;
+}
+
+.img-menu2 {
+  width: 100%;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+  background-image: url(../images/la_note_enchantee.jpg);
+}
+
+.img-menu3 {
+  width: 100%;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+  background-image: url(../images/a_la_francaise.jpg);
+}
+
+.img-menu4 {
+  width: 100%;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+  background-image: url(../images/le_delice_des_sens.jpg);
 }
 /*# sourceMappingURL=style.css.map */
