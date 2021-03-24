@@ -1,6 +1,122 @@
+.load-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: $color-tertiary;
+  transform: scale(0);
+  animation: load-page 3s;
+}
+.load-spinner {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+
+  & div {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: $color-tertiary-dark;
+    box-shadow: 1px 1px 1px $color-secondary;
+    border-radius: 50%;
+    opacity: 0;
+    animation: load-spinner 3s linear 3s;
+  }
+}
+.load-spinner div:nth-child(1) {
+  animation-delay: 0s;
+  top: 37px;
+  left: 66px;
+}
+.load-spinner div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22px;
+  left: 62px;
+}
+.load-spinner div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11px;
+  left: 52px;
+}
+.load-spinner div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7px;
+  left: 37px;
+}
+.load-spinner div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11px;
+  left: 22px;
+}
+.load-spinner div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22px;
+  left: 11px;
+}
+.load-spinner div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 37px;
+  left: 7px;
+}
+.load-spinner div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 52px;
+  left: 11px;
+}
+.load-spinner div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62px;
+  left: 22px;
+}
+.load-spinner div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66px;
+  left: 37px;
+}
+.load-spinner div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62px;
+  left: 52px;
+}
+.load-spinner div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 52px;
+  left: 62px;
+}
+@keyframes load-spinner {
+  1%,
+  20%,
+  80%,
+  99% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes load-page {
+  0%,
+  99% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 body {
-  @include font-text ;
+  @include font-text;
   margin: 0;
+  padding: 0;
 }
 h1 {
   @include font-logo;
@@ -8,14 +124,14 @@ h1 {
   @include cont-center;
   margin: 0px;
 }
-.accueil {
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $color-bg;
   height: 350px;
 }
-.localisation {
+.home__search {
   width: 100%;
   height: 50px;
   @include cont-center;
@@ -23,8 +139,8 @@ h1 {
   box-shadow: 3px 3px 15px silver inset;
   margin-top: 0px;
 }
-.localisation button,
-.localisation input {
+.home__search button,
+.home__search input {
   border: none;
   background-color: transparent;
   font-size: 1em;
@@ -33,13 +149,13 @@ h1 {
 }
 h2 {
   width: 70%;
-  @include font-text-black ;
+  @include font-text-black;
   font-size: 1.4em;
   text-align: center;
   margin: 40px 0px 0px 0px;
   padding: 0px;
 }
-.accueil p {
+.home p {
   width: 90%;
   @include font-text-thin;
   @include cont-center;
@@ -48,7 +164,7 @@ h2 {
   margin-top: 10px;
   margin-bottom: 40px;
 }
-.explore {
+.home__btn-explore {
   width: 60%;
   height: 50px;
   border-radius: 25px;
@@ -57,8 +173,12 @@ h2 {
   font-weight: bold;
   background: linear-gradient(#ff79da, #9356dc);
   box-shadow: 2px 4px 8px silver;
+  &:hover {
+    opacity: 0.9;
+    box-shadow: 4px 4px 8px black;
+  }
 }
-.fonctionnement {
+.box-link {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -69,12 +189,12 @@ h3 {
   width: 90%;
   font-size: 1.4em;
 }
-.fonctionnement ol {
+.box-link ol {
   counter-reset: etape;
   margin: 0px;
   padding: 0px;
 }
-.fonctionnement li {
+.box-link li {
   list-style-type: none;
   counter-increment: etape;
   margin: 0px 10px 50px 10px;
@@ -88,29 +208,31 @@ h3 {
   justify-content: flex-start;
   font-size: 1.1em;
   font-weight: bold;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+  &:before {
+    content: counter(etape);
+    @include cont-center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: $color-primary;
+    margin-left: -10px;
+    margin-right: 0px;
+    color: white;
+  }
 }
-.fonctionnement li:before {
-  content: counter(etape);
-  @include cont-center;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background: $color-primary;
-  margin-left: -10px;
-  margin-right: 0px;
-  color: white;
-}
-.fonctionnement i {
+
+.box-link i {
   margin: 0px 20px 0px 20px;
   font-size: 1.2em;
   color: silver;
+  &:hover {
+    color: $color-primary;
+  }
 }
-.fonctionnement i:hover {
-  color: $color-primary;
-}
-.fonctionnement li:hover {
-  background-color: $color-primary-light;
-}
+
 h4 {
   margin: 0px;
 }
@@ -119,11 +241,11 @@ h4 {
   margin-right: auto;
   margin-left: auto;
   & p {
-  @include font-text-thin;
-  margin: 0px;
+    @include font-text-thin;
+    margin: 0px;
   }
 }
-.conteneur {
+.contains {
   width: 100%;
   height: 250px;
   border-radius: 15px;
@@ -134,7 +256,7 @@ h4 {
   margin-bottom: 20px;
   position: relative;
 }
-.conteneur__text {
+.contains__text {
   display: flex;
   justify-content: space-between;
   margin: 10px 0px 0px 20px;
@@ -145,15 +267,38 @@ h4 {
     align-content: center;
   }
 }
-.conteneur i {
+.contains i {
   margin-right: 20px;
   font-size: 2em;
-  color: $color-primary;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
 }
-.conteneur__img {
+.heart-plein {
+  opacity: 1;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(#9356dc, #ff79da);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: heart-survol 2s;
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+@keyframes heart-survol {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.contains__img {
   width: 100%;
   height: 175px;
-  
+
   &--new {
     width: 70px;
     height: 30px;
@@ -164,12 +309,11 @@ h4 {
     color: $color-tertiary-dark;
     font-weight: bold;
     position: absolute;
-    top:20px;
+    top: 20px;
     right: 20px;
- 
   }
 }
-.conteneur__img img {
+.contains__img img {
   width: 100%;
   height: 175px;
   object-fit: cover;
@@ -193,7 +337,7 @@ footer {
     & li {
       margin-bottom: 5px;
       & i {
-        padding-right: 10px;
+        width: 25px;
       }
     }
   }
