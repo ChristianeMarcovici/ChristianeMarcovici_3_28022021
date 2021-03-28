@@ -17,7 +17,6 @@
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%);
-
   & div {
     position: absolute;
     width: 7px;
@@ -136,9 +135,7 @@ h1 {
   height: 50px;
   @include cont-center;
   background-color: $color-bg-dark;
-
-  box-shadow: inset 0px 11px 8px -10px silver;
-
+  box-shadow: inset 0px 11px 8px -10px $color-shadow-dark-link;
   margin-top: 0px;
 }
 .home__search button,
@@ -173,11 +170,11 @@ h2 {
   border: none;
   color: white;
   font-weight: bold;
-  background: linear-gradient(#ff79da, #9356dc);
-  box-shadow: 2px 4px 8px silver;
+  background: linear-gradient($color-secondary, $color-primary);
+  box-shadow: 3px 2px 3px $color-shadow-dark;
   &:hover {
     opacity: 0.9;
-    box-shadow: 4px 4px 8px black;
+    box-shadow: 4px 4px 6px $color-shadow-dark-link;
   }
 }
 .box-link {
@@ -186,9 +183,6 @@ h2 {
   justify-content: flex-start;
   margin: auto;
   width: 90%;
-  @media (min-width: 500px) {
-    align-items: center;
-  }
 }
 h3 {
   width: 90%;
@@ -202,29 +196,23 @@ h3 {
   counter-reset: etape;
   margin: 0px;
   padding: 0px;
-  @media (min-width: 500px) {
-    min-width: 50%;
-  }
-  @media (min-width: 1124px) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1024px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-width: 100%;
-  }
-}
-.box-link__li {
-  position: relative;
-  width: 100%;
-  @media (min-width: 1124px) {
-    width: 30%;
   }
 }
 .box-link li {
   list-style-type: none;
-  counter-increment: etape;
+  counter-increment: numbers;
   margin: 0px 10px 50px 10px;
   padding-right: 10px;
-  width: 93%;
+  min-width: 280px;
+  max-width: 340px;
   height: 70px;
   box-shadow: 1px 1px 5px silver;
   border-radius: 20px;
@@ -236,13 +224,11 @@ h3 {
   &:hover {
     background-color: $color-primary-light;
   }
-  @media (min-width: 1124px) {
-    flex-direction: row;
-    width: 100%;
+  @media (min-width: 1024px) {
     justify-content: space-around;
   }
   &:before {
-    content: counter(etape);
+    content: counter(numbers);
     @include cont-center;
     width: 30px;
     height: 30px;
@@ -251,6 +237,9 @@ h3 {
     margin-left: -10px;
     margin-right: 0px;
     color: white;
+    @media (min-width: 1024px) {
+      margin-left: -20px;
+    }
   }
 }
 .box-link i {
@@ -312,24 +301,31 @@ h4 {
   position: absolute;
   right: 10px;
 }
-.heart-plein {
+.animation-heart {
   opacity: 1;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
+  &:active,
   &:hover {
     background: -webkit-linear-gradient(#9356dc, #ff79da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: heart-survol 2s;
+    animation: heart-hover 2s;
     opacity: 1;
     text-shadow: none;
   }
 }
-@keyframes heart-survol {
-  from {
+@keyframes heart-hover {
+  0% {
     opacity: 0;
   }
-  to {
+  20% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
   }
 }
