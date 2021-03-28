@@ -5,6 +5,7 @@ $color-tertiary: #99e2d0;
 $color-bg: #f6f6f6;
 $color-primary-light: lighten(#9356dc, 30%);
 $color-tertiary-dark: darken(#99e2d0, 30%);
+$color-bg-dark: darken(#f6f6f6, 5%);
 
 /*mixins*/
 @mixin font-logo {

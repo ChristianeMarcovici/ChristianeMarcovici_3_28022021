@@ -135,8 +135,10 @@ h1 {
   width: 100%;
   height: 50px;
   @include cont-center;
-  background-color: $color-bg;
-  box-shadow: 3px 3px 15px silver inset;
+  background-color: $color-bg-dark;
+
+  box-shadow: inset 0px 11px 8px -10px silver;
+
   margin-top: 0px;
 }
 .home__search button,
@@ -184,15 +186,38 @@ h2 {
   justify-content: flex-start;
   margin: auto;
   width: 90%;
+  @media (min-width: 500px) {
+    align-items: center;
+  }
 }
 h3 {
   width: 90%;
   font-size: 1.4em;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 .box-link ol {
   counter-reset: etape;
   margin: 0px;
   padding: 0px;
+  @media (min-width: 500px) {
+    min-width: 50%;
+  }
+  @media (min-width: 1124px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 100%;
+  }
+}
+.box-link__li {
+  position: relative;
+  width: 100%;
+  @media (min-width: 1124px) {
+    width: 30%;
+  }
 }
 .box-link li {
   list-style-type: none;
@@ -211,6 +236,11 @@ h3 {
   &:hover {
     background-color: $color-primary-light;
   }
+  @media (min-width: 1124px) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
   &:before {
     content: counter(etape);
     @include cont-center;
@@ -223,7 +253,6 @@ h3 {
     color: white;
   }
 }
-
 .box-link i {
   margin: 0px 20px 0px 20px;
   font-size: 1.2em;
@@ -240,6 +269,12 @@ h4 {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
   & p {
     @include font-text-thin;
     margin: 0px;
@@ -255,6 +290,9 @@ h4 {
   flex-direction: column;
   margin-bottom: 20px;
   position: relative;
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
 }
 .contains__text {
   display: flex;
@@ -280,7 +318,7 @@ h4 {
   color: white;
   &:hover {
     background: -webkit-linear-gradient(#9356dc, #ff79da);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: heart-survol 2s;
     opacity: 1;
