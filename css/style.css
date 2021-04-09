@@ -70,7 +70,7 @@
   position: absolute;
   width: 7px;
   height: 7px;
-  background: #32b091;
+  background: #2c9c81;
   -webkit-box-shadow: 1px 1px 1px #ff79da;
           box-shadow: 1px 1px 1px #ff79da;
   border-radius: 50%;
@@ -490,11 +490,6 @@ h4 {
   }
 }
 
-.restaurants p {
-  font-family: robotothin, "Courier New", Courier, monospace;
-  margin: 0px;
-}
-
 .contains {
   width: 100%;
   height: 250px;
@@ -541,6 +536,11 @@ h4 {
       align-content: center;
 }
 
+.contains__text p {
+  font-family: robotothin, "Courier New", Courier, monospace;
+  margin: 0px;
+}
+
 .contains i {
   margin-right: 20px;
   font-size: 2em;
@@ -555,13 +555,13 @@ h4 {
   color: #fff;
 }
 
-.animation-heart:active {
+.animation-heart:active, .animation-heart:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background: linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: heart-hover 2s forwards;
-          animation: heart-hover 2s forwards;
+  -webkit-animation: heart-hover 2s;
+          animation: heart-hover 2s;
   opacity: 1;
   text-shadow: none;
 }
@@ -616,7 +616,7 @@ h4 {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 4px;
-  color: #32b091;
+  color: #2c9c81;
   font-weight: bold;
   position: absolute;
   top: 20px;

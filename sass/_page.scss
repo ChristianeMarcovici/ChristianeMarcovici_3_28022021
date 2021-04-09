@@ -165,7 +165,7 @@ h2 {
   margin-bottom: 40px;
 }
 .home__btn-explore {
-  @include btn-bg-gradient-shadow ;
+  @include btn-bg-gradient-shadow;
   width: 60%;
   font-size: 1em;
 }
@@ -254,10 +254,6 @@ h4 {
     flex-flow: row wrap;
     justify-content: space-around;
   }
-  & p {
-    @include font-text-thin;
-    margin: 0px;
-  }
 }
 .contains {
   width: 100%;
@@ -282,6 +278,10 @@ h4 {
     flex-flow: column;
     align-content: center;
   }
+  & p {
+    @include font-text-thin;
+    margin: 0px;
+  }
 }
 .contains i {
   margin-right: 20px;
@@ -294,11 +294,12 @@ h4 {
   opacity: 1;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: #fff;
-  &:active {
+  &:active,
+  &:hover {
     background: linear-gradient(#9356dc, #ff79da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: heart-hover 2s forwards;
+    animation: heart-hover 2s;
     opacity: 1;
     text-shadow: none;
   }
