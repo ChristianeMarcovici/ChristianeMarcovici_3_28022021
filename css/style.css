@@ -231,6 +231,7 @@ body {
 
 h1 {
   font-family: shrikhandregular, "Courier New", Courier, monospace;
+  font-size: 2.4em;
   height: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,20 +315,20 @@ h2 {
 }
 
 .home__btn-explore {
-  width: 60%;
   height: 50px;
   border-radius: 25px;
-  border: none;
   color: white;
-  font-weight: bold;
+  border: none;
   background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
   background: linear-gradient(#ff79da, #9356dc);
   -webkit-box-shadow: 3px 2px 3px #d0d0d0;
           box-shadow: 3px 2px 3px #d0d0d0;
+  width: 60%;
+  font-size: 1em;
 }
 
 .home__btn-explore:hover {
-  opacity: 0.9;
+  opacity: 0.8;
   -webkit-box-shadow: 4px 4px 6px #aaaaaa;
           box-shadow: 4px 4px 6px #aaaaaa;
 }
@@ -500,7 +501,6 @@ h4 {
   border-radius: 15px;
   -webkit-box-shadow: 1px 1px 3px silver;
           box-shadow: 1px 1px 3px silver;
-  contain: content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,15 +552,16 @@ h4 {
 .animation-heart {
   opacity: 1;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: white;
+  color: #fff;
 }
 
-.animation-heart:active, .animation-heart:hover {
-  background: -webkit-linear-gradient(#9356dc, #ff79da);
+.animation-heart:active {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: heart-hover 2s;
-          animation: heart-hover 2s;
+  -webkit-animation: heart-hover 2s forwards;
+          animation: heart-hover 2s forwards;
   opacity: 1;
   text-shadow: none;
 }
@@ -1111,22 +1112,22 @@ footer ul li i {
 }
 
 .btn-cmd {
-  width: 50%;
   height: 50px;
+  border-radius: 25px;
   color: white;
-  font-size: 1.2em;
-  margin-top: 40px;
-  margin-bottom: 60px;
-  border-radius: 20px;
   border: none;
   background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
   background: linear-gradient(#ff79da, #9356dc);
   -webkit-box-shadow: 3px 2px 3px #d0d0d0;
           box-shadow: 3px 2px 3px #d0d0d0;
+  width: 50%;
+  font-size: 1.2em;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .btn-cmd:hover {
-  opacity: 0.9;
+  opacity: 0.8;
   -webkit-box-shadow: 4px 4px 6px #aaaaaa;
           box-shadow: 4px 4px 6px #aaaaaa;
 }

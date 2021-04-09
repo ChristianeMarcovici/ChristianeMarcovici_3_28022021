@@ -37,3 +37,16 @@ $color-shadow-dark-link: darken(#f6f6f6, 30%);
   background-size: cover;
   margin-bottom: 0px;
 }
+@mixin btn-bg-gradient-shadow {
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  border: none;
+  background: linear-gradient($color-secondary, $color-primary);
+  box-shadow: 3px 2px 3px $color-shadow-dark;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 4px 4px 6px $color-shadow-dark-link;
+  }
+
+}
