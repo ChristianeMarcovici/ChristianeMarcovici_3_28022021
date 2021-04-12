@@ -499,6 +499,7 @@ h4 {
           flex-direction: column;
   margin-bottom: 20px;
   position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
