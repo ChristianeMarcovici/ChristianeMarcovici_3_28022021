@@ -8,15 +8,21 @@
   & i {
     font-size: 1.8em;
     margin-right: 50px;
-    color: black;
+    color: #000;
     &:active {
       color: $color-tertiary;
     }
   }
 }
-
+.contain-img-menu {
+  width: 100%;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+}
 .img-menu1 {
-  @include img-menu;
   background-image: url(../images/la_palette_du_gout.jpg);
 }
 .container {
@@ -53,7 +59,6 @@
     flex-flow: column wrap;
   }
 }
-
 .menu-title {
   width: 100%;
   display: flex;
@@ -73,7 +78,6 @@
   font-size: 1.6em;
   margin-right: 10px;
 }
-
 .container__menu--box h3 {
   @include font-text-thin;
   font-size: 1.4em;
@@ -82,20 +86,18 @@
   margin-bottom: 20px;
   border-bottom: 3px solid $color-tertiary;
 }
-
 .cont-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: #fff;
   margin-bottom: 20px;
   border-radius: 15px;
-  box-shadow: 3px 2px 2px silver;
+  box-shadow: 3px 2px 2px #c0c0c0;
   position: relative;
 }
-
 .cont-1,
 .cont-2,
 .cont-3,
@@ -207,7 +209,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   font-size: 1.2em;
   font-weight: bold;
   background-color: $color-tertiary;
@@ -217,7 +219,6 @@
   top: 0;
   right: -60px;
 }
-
 @keyframes check-pos {
   0% {
     right: -60px;
@@ -243,15 +244,12 @@
   }
 }
 .img-menu2 {
-  @include img-menu;
   background-image: url(../images/la_note_enchantee.jpg);
 }
 .img-menu3 {
-  @include img-menu;
   background-image: url(../images/a_la_francaise.jpg);
 }
 .img-menu4 {
-  @include img-menu;
   background-image: url(../images/le_delice_des_sens.jpg);
 }
 .btn-cmd {
